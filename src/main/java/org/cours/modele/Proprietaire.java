@@ -1,5 +1,6 @@
 package org.cours.modele;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,6 +20,7 @@ public class Proprietaire {
     @NonNull
     private String prenom;
     @OneToMany(cascade = CascadeType.ALL, mappedBy="proprietaire")
+    @JsonIgnore
     private List<Voiture> voitures;
 
 
